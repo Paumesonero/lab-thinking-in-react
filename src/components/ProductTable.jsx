@@ -2,23 +2,24 @@ import React from 'react'
 import ProductRow from './ProductRow'
 
 export default function ProductTable(props) {
-    const { product: { category, price, inStock, name, id } } = props
-    //console.log(name)
+    const { products } = props
+    //console.log(products)
+
     return (
         <div>
             <table>
                 <thead>
                     <tr>
-                        <th>name</th>
+                        <th>Name</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><ProductRow info={{ category, price, inStock, name, id }} /></td>
-                    </tr>
+                    {products.map(el => {
+                        return <ProductRow key={el.id} products={el} />
+                    })}
                 </tbody>
             </table>
-
         </div>
     )
 }

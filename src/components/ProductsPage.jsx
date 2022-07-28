@@ -12,10 +12,7 @@ export default function ProductsPage() {
                 <SearchBar />
             </div>
             <div>
-                {products.map(el => {
-                    return <ProductTable key={el.id} product={el} />
-                })}
-
+                <ProductTable products={products} />
             </div>
         </div>
     )
