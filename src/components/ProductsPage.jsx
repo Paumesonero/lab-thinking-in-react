@@ -14,11 +14,24 @@ export default function ProductsPage() {
             setProducts(filtered)
         }
     }
+
+    const handleCheckbox = (e) => {
+        let isChecked = e.target.checked;
+
+        console.log('inside checkbox', isChecked)
+        if (isChecked) {
+            const filteredStock = products.filter(el => el.inStock)
+            //console.log(filteredStock)
+            setProducts(filteredStock)
+        } else {
+            setProducts(jsonData)
+        }
+    }
     return (
         <div>
             <h1>IronStore</h1>
             <div>
-                <SearchBar onSearch={handleSearch} />
+                <SearchBar onSearch={handleSearch} onChecked={handleCheckbox} />
             </div>
             <div>
                 <ProductTable products={products} />
