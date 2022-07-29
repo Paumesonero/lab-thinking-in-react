@@ -28,14 +28,14 @@ export default function ProductsPage() {
         }
     }
     return (
-        <div>
+        <div className='page-container'>
             <h1>IronStore</h1>
-            <div>
-                <SearchBar onSearch={handleSearch} onChecked={handleCheckbox} />
-            </div>
-            <div>
-                <ProductTable products={products} />
-            </div>
+
+            <SearchBar onSearch={handleSearch} onChecked={handleCheckbox} />
+
+
+            <ProductTable products={products} />
+
         </div>
     )
 }

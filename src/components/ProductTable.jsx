@@ -6,20 +6,20 @@ export default function ProductTable(props) {
     //console.log(products)
 
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {products.map(el => {
-                        return <ProductRow key={el.id} products={el} />
-                    })}
-                </tbody>
-            </table>
-        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {products.map(el => {
+                    return <ProductRow key={el.id} products={el} />
+                })}
+            </tbody>
+        </table>
+
     )
 }
